@@ -9,8 +9,8 @@ ENDPOINTS
 | 1         | Get/post      |  /signup  |    allow users to signup           |
 | 2         | Get/post      |  /login   |     allow users to login         |
 | 3         | Get    |  /profile |       users profile        |
-| 4         |               |           |               |
-| 5         |               |           |               |
+| 4         |    Get           |   /cocktails        |   List of all cocktails            |
+| 5         |             |           |               |
 | 6         |               |           |               |
 | 7         |               |           |               |
 | 8         |               |           |               |
