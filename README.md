@@ -1,6 +1,6 @@
 # Cocktails Web
 
-A Cocktails Web using the CocktailDB API
+A Cocktails Web usin the CocktailDB API
 
 ENDPOINTS
 
@@ -17,7 +17,7 @@ ENDPOINTS
 
 
 
-```bash
+
 the-cocktail-app/
 ├── .gitignore
 ├── app.js
@@ -60,5 +60,3 @@ the-cocktail-app/
     |    └── dashboard.hbs
     │                      
     └── layout.hbs
-    
-    ```
