@@ -1,9 +1,8 @@
 const charactersAPI = new APIHandler();
 
-window.addEventListener('load', () => { 
 
-    document.getElementById('random-cocktail').addEventListener('click', function (event) {
-        event.preventDefault()
+
+    
         
         charactersAPI.getRandomCocktail()
           .then(randomCocktail => {
@@ -36,29 +35,39 @@ window.addEventListener('load', () => {
           })      
         
           .catch(err => console.log('error!', err))     
-      })
-})
 
 
-window.addEventListener('load', () => { 
 
-    document.getElementById('all-ingredients').addEventListener('click', function (event) {
-        event.preventDefault()
-        
-        charactersAPI.getAllIngredients()
-          .then(allIngredients => {
-           console.log(allIngredients)
+
+
+//Listar todos los cocktails
+  
+      charactersAPI.getAllCocktails()
+      
+          .then(allCocktails => {
+
             let text = ''
-            allIngredients.data.drinks.forEach(cocktail => {
-              text+=` <section class="ingredients">
-              <div class="name">Ingredients: ${cocktail.strIngredient1}</div>
-               </section>`
-              })
-              document.querySelector('.cocktail-container').innerHTML = text
-              
+              console.log(allCocktails)
+
+        
+            allCocktails.data.drinks.forEach(cocktail => {
+                
+              text+=  `<div class="cocktail-list-container">
+                 <div class="cocktail-info">
+                <div class="image"><img src="${cocktail.strDrinkThumb}" alt="imagen"></div>
+                 <div class="name">Name: ${cocktail.strDrink}</div>`
+
+
+            document.querySelector('.cocktail-list-container').innerHTML = text
+
+            
             })
-            .catch(err => console.log('error!', err))     
-          })
         
-        
-})        
+      })
+  
+     .catch(err => console.log('error', err))
+  
+
+
+
+

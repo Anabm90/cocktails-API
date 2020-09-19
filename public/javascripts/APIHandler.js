@@ -5,7 +5,7 @@ class APIHandler {
     }
   
     getRandomCocktail = () => this.BASE_URL.get('random.php') 
-    getAllAlcoholicCocktails = () => this.BASE_URL.get('filter.php?c=Cocktail') 
-    // getAllIngredients = () => this.BASE_URL.get('list.php?i=list')
+    getAllCocktails = () => this.BASE_URL.get('filter.php?c=Cocktail')
 
-  }
+}
+

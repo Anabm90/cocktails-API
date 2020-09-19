@@ -6,18 +6,18 @@ ENDPOINTS
 
 | Id        | Method        | Path      | Description   |
 | :---      |     :---      |    :---   |  :---         |
-| 1         | Get/post      |  /signup  |    allow users to signup           |
-| 2         | Get/post      |  /login   |     allow users to login         |
-| 3         | Get    |  /profile |       users profile        |
-| 4         |    Get           |   /cocktails        |   List of all cocktails            |
-| 5         |       Get/post      | /cocktails/new-cocktail          |   Create a new cocktail            |
-| 6         |        Get/post       |  /cocktails/edit         |   Edit a cocktail            |
+| 1         | /login        |           |               |
+| 2         |               |           |               |
+| 3         |               |           |               |
+| 4         |               |           |               |
+| 5         |               |           |               |
+| 6         |               |           |               |
 | 7         |               |           |               |
 | 8         |               |           |               |
 
 
 
-```bash
+
 the-cocktail-app/
 ├── .gitignore
 ├── app.js
@@ -60,4 +60,3 @@ the-cocktail-app/
     |    └── dashboard.hbs
     │                      
     └── layout.hbs
-```
