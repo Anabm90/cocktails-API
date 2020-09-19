@@ -6,8 +6,8 @@ ENDPOINTS
 
 | Id        | Method        | Path      | Description   |
 | :---      |     :---      |    :---   |  :---         |
-| 1         | Get/post      |  /signup  |               |
-| 2         | Get/post      |  /login   |               |
+| 1         | Get/post      |  /signup  |    allow users to signup           |
+| 2         | Get/post      |  /login   |     allow users to login         |
 | 3         |               |           |               |
 | 4         |               |           |               |
 | 5         |               |           |               |
