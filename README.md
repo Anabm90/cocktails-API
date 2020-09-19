@@ -17,7 +17,7 @@ ENDPOINTS
 
 
 
-´´´branch
+´´´bash
 the-cocktail-app/
 ├── .gitignore
 ├── app.js
