@@ -6,14 +6,16 @@ ENDPOINTS
 
 | Id        | Method        | Path      | Description   |
 | :---      |     :---      |    :---   |  :---         |
-| 1         | /login        |           |               |
-| 2         |               |           |               |
-| 3         |               |           |               |
-| 4         |               |           |               |
-| 5         |               |           |               |
-| 6         |               |           |               |
+| 1         |    get   | /login            |               |
+| 2         |   get      |  /signup         |               |
+| 3         | Get    |  /profile |       users profile        |
+| 4         |    Get           |   /cocktails        |   List of all cocktails            |
+| 5         |       Get/post      | /cocktails/new-cocktail          |   Create a new cocktail            |
+| 6         |        Get/post       |  cocktails/edit         |   Edit a cocktail            |
+| 6         |        Get/post       |  /cocktails/edit         |   Edit a cocktail            |
 | 7         |               |           |               |
 | 8         |               |           |               |
+
 
 
 
