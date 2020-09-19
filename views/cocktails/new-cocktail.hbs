@@ -1,1 +1,21 @@
 <h1>crear un nuevo cocktail</h1>
+
+<form action="/cocktails/profile/new-cocktail" method="post">
+    <label for="name-input">Nombre</label>
+    <input name="strDrink" type="text" class="form-control" id="name-input">
+
+
+    <label for="name-input">Categoría</label>
+     <select name="strDrink" class="form-control">
+            <option>Seleccionar</option>
+              {{#each cocktails}}
+                <option>{{strDrink}}</option>
+             {{/each}}      
+    </select>
+   
+    <input name="strCategory" type="text" class="form-control" id="name-input">
+    <label for="name-input">Alcohólico</label>
+    <input name="strAlcoholic" type="text" class="form-control" id="name-input">
+
+     <button type="submit" class="btn btn-dark">Crear cocktail</button>
+</form>

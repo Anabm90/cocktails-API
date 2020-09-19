@@ -17,7 +17,7 @@ const charactersAPI = new APIHandler();
           
                     text+=` <div class="cocktail-info">
                       <div class="id">Id: <strong style="color:orange;">${cocktail.idDrink}</strong></div>
-                      <div class="name">Name: <strong style="color:orange;">${cocktail.strDrink}</strong></div>
+                      <div class="name">Name: <strong style="color:orange;">${cocktail.strDrink} </strong></div>
                       <div class="category">Categoria: <strong style="color:orange;">${cocktail.strCategory}</strong></div>`
                     text+=`<div class="ingredients">Ingredientes:`  
                          ingredientArray.forEach((ingredient) => {
@@ -52,13 +52,12 @@ const charactersAPI = new APIHandler();
         
             allCocktails.data.drinks.forEach(cocktail => {
                 
-              text+=  `<div class="cocktail-list-container">
-                 <div class="cocktail-info">
+              text+=  ` <div class="cocktail-info">
                 <div class="image"><img src="${cocktail.strDrinkThumb}" alt="imagen"></div>
                  <div class="name">Name: ${cocktail.strDrink}</div>`
 
 
-            document.querySelector('.cocktail-list-container').innerHTML = text
+            document.querySelector('.cocktail-info').innerHTML = text
 
             
             })
