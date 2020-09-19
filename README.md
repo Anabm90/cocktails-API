@@ -10,8 +10,8 @@ ENDPOINTS
 | 2         | Get/post      |  /login   |     allow users to login         |
 | 3         | Get    |  /profile |       users profile        |
 | 4         |    Get           |   /cocktails        |   List of all cocktails            |
-| 5         |             |           |               |
-| 6         |               |           |               |
+| 5         |       Get/post      | /cocktails/new-cocktail          |   Create a new cocktail            |
+| 6         |        Get/post       |  cocktails/edit         |   Edit a cocktail            |
 | 7         |               |           |               |
 | 8         |               |           |               |
 
