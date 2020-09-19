@@ -17,7 +17,7 @@ ENDPOINTS
 
 
 
-
+```bash
 the-cocktail-app/
 ├── .gitignore
 ├── app.js
@@ -60,3 +60,5 @@ the-cocktail-app/
     |    └── dashboard.hbs
     │                      
     └── layout.hbs
+    
+    ```
