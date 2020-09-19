@@ -1,6 +1,6 @@
 # Cocktails Web
 
-A Cocktails Web usin the CocktailDB API
+A Cocktails Web using the CocktailDB API
 
 ENDPOINTS
 
