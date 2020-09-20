@@ -5,16 +5,17 @@ A Cocktails Web usin the CocktailDB API
 ENDPOINTS
 
 
-| Id        | Method        | Path                               | Description           |
-| :---      |     :---      |    :---                            |  :---                 |
-| 1         | Get           | /login                             |    Login              |
-| 2         | Get           |  /signup                           |    Signup             |
-| 3         | Get           |  /cocktails                        |  All cocktails        |
-| 4         | Get           |  /cocktails/profile               |  User profile            |
-| 5         | Get/post      | /cocktails/new-cocktail            |   Create a new cocktail            |
-| 6         |Get/post       |  cocktails/edit                    |   Edit a cocktail            |
-| 6          Get/post       |  /cocktails/edit                   |   Edit a cocktail            |
-  
+| Id        | Method        | Path                               | Description                |
+| :---      |     :---      |    :---                            |  :---                      |
+| 1         | Get           | /login                             |    Login                   |
+| 2         | Get           |  /signup                           |    Signup                  |
+| 3         | Get           |  /cocktails                        |  All cocktails             |
+| 4         | Get           |  /cocktails/profile                |  User profile              |
+| 5         | Get/post      | /cocktails/new-cocktail            |   Create a new cocktail    |
+| 6         |Get/post       |  /cocktails/edit-cocktail/:id      |   Edit a cocktail          |
+| 8         |  Get          |   /cocktails/:id                   |  Cocktail details          |
+| 9         |  Get          |   /random                          |  Get a random cocktail     |
+| 10        |  Get          |  /ingredients                      |  Search cocktails by drink |
 ```bash
 the-cocktail-app/
 ├── .gitignore
