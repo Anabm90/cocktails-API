@@ -2,7 +2,7 @@
 
 A Cocktails Web usin the CocktailDB API
 
-ENDPOINTS
+ENDPOINTS TABLE
 
 
 | Id        | Method        | Path                               | Description                |
