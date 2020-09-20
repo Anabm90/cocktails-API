@@ -25,7 +25,10 @@ the-cocktail-app/
 │   └──seed.js
 ├── models
 │   ├── cocktail-model.js
-│   └── user.js
+│   ├── user.model.js
+│   ├── value.model.js
+│   └── picture.model.js
+│    
 ├── package.json
 ├── package-lock.json
 ├── public
@@ -38,6 +41,7 @@ the-cocktail-app/
 │   └── images
 │       └── favicon.ico
 ├── routes
+│   ├── auth.routes.js
 │   ├── index.js
 │   ├── cocktail.routes.js
 │   └── base.routes.js
@@ -46,16 +50,17 @@ the-cocktail-app/
     │   ├── login.hbs
     │   └── signup.hbs
     ├── error.hbs
+    ├── not-found.hbs
     ├── index.hbs
-    │      └── search.routes.js
+    ├── ingredients.hbs
+    ├── random-cocktail.hbs
+    ├── layout.hbs
     │
     ├── cocktails
-    │   └── users.hbs
-    |        ├── user-profile.hbs
-    |        ├── new-cocktail.hbs  
-    |        └── edit.hbs
-    │    
-    ├── admin.hbs
-    |    └── dashboard.hbs
-    │                      
-    └── layout.hbs
+    │   ├── user-profile.hbs
+    |   ├──new-cocktail.hbs
+    |   ├── edit-cocktail.hbs
+    |   ├── search.hbs
+    |   └── details.hbs                      
+    └── 
+```
