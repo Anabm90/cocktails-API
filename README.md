@@ -58,9 +58,9 @@ the-cocktail-app/
     │
     ├── cocktails
     │   ├── user-profile.hbs
-    |   ├──new-cocktail.hbs
-    |   ├── edit-cocktail.hbs
-    |   ├── search.hbs
-    |   └── details.hbs                      
+    │   ├──new-cocktail.hbs
+    │   ├── edit-cocktail.hbs
+    │   ├── search.hbs
+    │   └── details.hbs                      
     └── 
 ```
