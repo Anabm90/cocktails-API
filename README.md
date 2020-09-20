@@ -4,19 +4,17 @@ A Cocktails Web usin the CocktailDB API
 
 ENDPOINTS
 
-| Id        | Method        | Path      | Description   |
-| :---      |     :---      |    :---   |  :---         |
-| 1         | /login        |           |               |
-| 2         |               |           |               |
-| 3         |               |           |               |
-| 4         |               |           |               |
-| 5         |               |           |               |
-| 6         |               |           |               |
-| 7         |               |           |               |
-| 8         |               |           |               |
-
-
-
+´´´bash
+| Id        | Method        | Path                               | Description           |
+| :---      |     :---      |    :---                            |  :---                 |
+| 1         | Get           | /login                             |    Login              |
+| 2         | Get           |  /signup                           |    Signup             |
+| 3         | Get           |  /cocktails                        |  All cocktails        |
+| 4         | Get           |  /cocktails/profile               |  User profile            |
+| 5         | Get/post      | /cocktails/new-cocktail            |   Create a new cocktail            |
+| 6         |Get/post       |  cocktails/edit                    |   Edit a cocktail            |
+| 6          Get/post       |  /cocktails/edit                   |   Edit a cocktail            |
+´´´   
 
 the-cocktail-app/
 ├── .gitignore
