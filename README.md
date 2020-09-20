@@ -15,7 +15,7 @@ ENDPOINTS
 | 6         |Get/post       |  cocktails/edit                    |   Edit a cocktail            |
 | 6          Get/post       |  /cocktails/edit                   |   Edit a cocktail            |
   
-´´´bash
+```bash
 the-cocktail-app/
 ├── .gitignore
 ├── app.js
