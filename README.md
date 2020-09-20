@@ -4,7 +4,7 @@ A Cocktails Web usin the CocktailDB API
 
 ENDPOINTS
 
-´´´bash
+
 | Id        | Method        | Path                               | Description           |
 | :---      |     :---      |    :---                            |  :---                 |
 | 1         | Get           | /login                             |    Login              |
@@ -14,8 +14,8 @@ ENDPOINTS
 | 5         | Get/post      | /cocktails/new-cocktail            |   Create a new cocktail            |
 | 6         |Get/post       |  cocktails/edit                    |   Edit a cocktail            |
 | 6          Get/post       |  /cocktails/edit                   |   Edit a cocktail            |
-´´´   
-
+  
+´´´bash
 the-cocktail-app/
 ├── .gitignore
 ├── app.js
