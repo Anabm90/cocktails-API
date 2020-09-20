@@ -15,7 +15,7 @@ ENDPOINTS TABLE
 | 6         |Get/post       |  /cocktails/edit-cocktail/:id      |   Edit a cocktail          |
 | 8         |  Get          |   /cocktails/:id                   |  Cocktail details          |
 | 9         |  Get          |   /random                          |  Get a random cocktail     |
-| 10        |  Get          |  /ingredients                      |  Search cocktails by drink |
+| 10        |  Get          |  /ingredients                      |  Search cocktails by ingredient |
 ```bash
 the-cocktail-app/
 ├── .gitignore
