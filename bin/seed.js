@@ -1,10 +1,10 @@
 const mongoose = require('mongoose');
 const Cocktail = require('../models/cocktail-model');
-const dbname = "cocktails-project-DB"
+const dbname = "cocktails-proyect-DB"
 
 
 mongoose.connect(`mongodb://localhost/${dbname}`)
-const Cockstail = require('../models/cocktail-model');
+
 
 //Cocktail.collection.drop()
 
@@ -25,8 +25,6 @@ const cocktails = [
 
     strIngredients :['2 ounces of Dry Vermouth', '1 ounce of Benedictine', '3 dashes of Absinthe' ],
 
-    strOwner: "Le cocktailerie ",
-
     strTags:['Dry Vermouth','Absinthe','Benedictine']
 },
 
@@ -43,8 +41,6 @@ const cocktails = [
     strInstructions : "Add all ingredients into a shaker with ice and shake. Strain into a chilled coupe or cocktail glass. Garnish with an orange peel." ,
 
     strIngredients :['3/4 ounce of Scotch','3/4 ounce of Sweet Vermouth','3/4 ounce of Cherry liqueur','3/4 ounce of Orange juice' ],
-
-    strOwner: "Le cocktailerie ",
 
     strTags:['Scotch','Vermouth','Orange','Cherry']
 }

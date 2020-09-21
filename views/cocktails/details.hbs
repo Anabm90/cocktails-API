@@ -1,0 +1,37 @@
+<div class="container">
+
+    
+    <h1> {{cocktailDetails.strDrink}}</h1>
+
+            {{cocktailDetails.strCategory}} - {{cocktailDetails.strAlcoholic}} <br><br>
+            {{cocktailDetails.strGlass}}
+                 
+            
+    <br>
+
+
+    <img src="{{cocktailDetails.strDrinkThumb}}" alt="{{cocktailDetails.strDrink}}" height="80px">
+
+    <h4>Instructions:</h4>
+    <p>{{cocktailDetails.strInstructions}}</p>
+
+    <h4>Ingredients:</h4>
+    {{#each cocktailDetails.strIngredients}}
+        <ul>
+            <li>{{[]}}</li>
+        </ul>
+    {{/each}}
+
+    <p>Created by: 
+        
+        {{cocktailDetails.strOwner}}</p>
+                
+       
+
+    <p>Tags: 
+    {{#each cocktailDetails.strTags}}
+        <strong "style= background-color:black; color: white; padding: 3px;">{{[]}} </strong> 
+    {{/each}}
+    </p>
+
+</div>

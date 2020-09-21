@@ -16,9 +16,6 @@ const checkRole = rolesToCheck => {
 }
 
 
-
-
-
 // Endpoints
 router.get('/', (req, res) => res.render('index'))
 router.get('/cocktails/profile', checkLoggedIn, (req, res, next) => res.render('cocktails/user-profile', req.user))

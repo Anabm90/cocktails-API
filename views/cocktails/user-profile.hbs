@@ -1,6 +1,12 @@
 <h1>Welcome {{username}}!</h1>
+<p>Tu Id es {{_id}}</p>
 <h2>Tus cocktails</h2>
-
+{{#each allcocktails}}
+    {{strDrink}}
+{{/each}}
 
 
 <a class="btn btn-dark"href="/cocktails/profile/new-cocktail">Crear nuevo cocktail</a>
+<a class="btn btn-dark"href="/cocktails/profile/edit-cocktail">Editar cocktail</a>
+
+<a class="btn btn-dark"href="/cocktails/profile/{{username}}">Ver tus cocktails</a>

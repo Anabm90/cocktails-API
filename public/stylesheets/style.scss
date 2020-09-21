@@ -1,10 +1,52 @@
 body {
   padding: 50px;
-  font-family: sans-serif;
+  font-family: 'Raleway', sans-serif;
 }
-
+h1 {
+  margin: 60px 30px;
+  color: #CB2D2D;
+}
 
 .image {
   height: 80px;
   width: 80px;
 }
+
+
+#centered{
+  position: relative;
+  width: 400px;
+  height: 400px;
+
+}
+.image-random {
+  position: absolute;
+  width: 250px;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+}
+
+
+// body {
+//   background-image: url(/images/background.jpeg);
+//   height: 100%;
+//   background-repeat: no-repeat;
+//   background-size: cover;
+// }
+
+
+//Espacio para la imagen que no se renderiza
+.name-recipes {
+  margin-top: 120px;
+}
+
+.btn-danger {
+  margin-top: 30%;
+  height: 40px;
+}
+
+
+

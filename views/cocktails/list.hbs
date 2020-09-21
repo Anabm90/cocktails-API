@@ -1,0 +1,9 @@
+
+            <div class="cocktail-db">
+               {{#each allCocktails}}
+               <div class="image"><img src="{{strDrinkThumb}}" alt="{{strDrink}}"></div>
+               <div class="name">{{strDrink}}</div>
+               <div class="category">{{strCategory}}</div>
+               <a href="/search/{{_id}}">see more...</a>
+               {{/each}}
+            </div>

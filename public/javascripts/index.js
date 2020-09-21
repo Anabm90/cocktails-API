@@ -1,9 +1,5 @@
 const charactersAPI = new APIHandler();
-
-
-
-    
-        
+ 
         charactersAPI.getRandomCocktail()
           .then(randomCocktail => {
             let text = ''
@@ -16,17 +12,19 @@ const charactersAPI = new APIHandler();
                     }
           
                     text+=` <div class="cocktail-info">
-                      <div class="id">Id: <strong style="color:orange;">${cocktail.idDrink}</strong></div>
-                      <div class="name">Name: <strong style="color:orange;">${cocktail.strDrink} </strong></div>
-                      <div class="category">Categoria: <strong style="color:orange;">${cocktail.strCategory}</strong></div>`
-                    text+=`<div class="ingredients">Ingredientes:`  
+                      <div class="row">
+                      <div class="col-sm-12 col-md-6 col-lg-8">
+                      <div class="name text-center"> <h1>${cocktail.strDrink}</h1> </div>
+                      <div class="category"><strong><p>${cocktail.strCategory}</p></strong></div>`
+                    text+=`<div class="ingredients"><h4>Ingredientes:</h4>`  
                          ingredientArray.forEach((ingredient) => {
                           text += `<li>${ingredient.amount} of ${ingredient.name}</li>`
                          })
   
                     text+=` </div><div class="instructions">Instrucciones: ${cocktail.strInstructions}</div>
-                      <div class="image"><img src="${cocktail.strDrinkThumb}" alt="imagen"></div>
-                    </div>`
+                    </div><div class="col-sm-12 col-md-6 col-lg-4">
+                      <div id="centered"><img class="image-random" src="${cocktail.strDrinkThumb}" alt="imagen"></div>
+                      </div></div>`
 
                     document.querySelector('.cocktail-container').innerHTML = text
 
@@ -42,29 +40,28 @@ const charactersAPI = new APIHandler();
 
 //Listar todos los cocktails
   
-      charactersAPI.getAllCocktails()
+    //   charactersAPI.getAllCocktails()
       
-          .then(allCocktails => {
+    //       .then(allCocktails => {
 
-            let text = ''
-              console.log(allCocktails)
-
+    //         let text = ''
+              
         
-            allCocktails.data.drinks.forEach(cocktail => {
+    //         allCocktails.data.drinks.forEach(cocktail => {
                 
-              text+=  ` <div class="cocktail-info">
-                <div class="image"><img src="${cocktail.strDrinkThumb}" alt="imagen"></div>
-                 <div class="name">Name: ${cocktail.strDrink}</div>`
+    //           text+=` <div class="cocktail-info">
+    //             <div class="image"><img src="${cocktail.strDrinkThumb}" alt="imagen"></div>
+    //              <div class="name">Name: ${cocktail.strDrink}</div>`
 
 
-            document.querySelector('.cocktail-info').innerHTML = text
+    //         document.querySelector('.cocktail-info').innerHTML = text
 
             
-            })
+    //         })
         
-      })
+    //   })
   
-     .catch(err => console.log('error', err))
+    //  .catch(err => console.log('error', err))
   
 
 
