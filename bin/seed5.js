@@ -1,6 +1,7 @@
 const mongoose = require('mongoose')
 const dbname = "cocktails-proyect-DB"
-mongoose.connect(`mongodb://localhost/${dbname}`)
+mongoose.connect('mongodb+srv://cocktailDB:sehdus-9sumki-toWzoq@cluster0.d8m9h.mongodb.net/cocktail-app-db')
+
 
 const Glass = require('../models/bottle.model.js')
 //[Parfait glass", "Pint glass", "Pitcher", "Pousse cafe glass", "Punch bowl", "Shot glass", "Whiskey sour glass", "White wine glass", "Wine Glass"]
