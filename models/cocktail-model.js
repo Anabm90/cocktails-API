@@ -39,9 +39,9 @@ const cocktailSchema = new Schema({
         type: [String]
     },
 
-     strOwner:{
+    strOwner:{
         type: Schema.Types.ObjectId,
-        ref: 'user'
+        ref: 'User'
      },
     strTags: {
         type: [String]

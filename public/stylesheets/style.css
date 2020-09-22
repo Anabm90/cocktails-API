@@ -10,6 +10,9 @@ h1 {
   height: 80px;
   width: 80px; }
 
+.image-search {
+  height: 200px; }
+
 #centered {
   position: relative;
   width: 400px;

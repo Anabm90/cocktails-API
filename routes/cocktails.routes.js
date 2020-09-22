@@ -8,11 +8,18 @@ const Picture = require('./../models/picture.model')
 const Cocktail = require('../models/cocktail-model')
 const User = require('../models/user.model')
 const Value = require('../models/value.model')
-
+const Bottle = require('../models/bottle.model')
 
 
 //Lista de ingredientes
-router.get('/ingredients', (req, res) => res.render('ingredients'))
+router.get('/ingredients', (req, res) => {
+    Bottle.find()
+    .then(allBottles => res.render('ingredients', {allBottles}))
+    .catch(err => console.log('Error', err))
+  
+})
+
+
 //Create cocktails
 router.get('/profile/new-cocktail', (req, res) => {
     
@@ -35,22 +42,10 @@ router.post('/profile/new-cocktail', cdnUploader.single('imageInput'), (req, res
     const {strDrink, strCategory, strAlcoholic, strGlass, strDrinkThumb, strInstructions, strIngredients, strOwner, strTags} = req.body
     
     Cocktail
-    .create({strDrink, strCategory, strAlcoholic, strGlass, strDrinkThumb, strInstructions, strIngredients, strOwner: req.user._id, strTags})
-    .then(()=> res.redirect('/'))
+    .create({strDrink, strCategory, strAlcoholic, strGlass, strDrinkThumb: req.file.path, strInstructions, strIngredients, strOwner: req.user._id, strTags})
+    .then(()=> res.redirect('/cocktails/profile'))
     .catch(err =>next(err))   
 })
-
-// strOwner
-
-// Hecho con promise.all pero da error
-//     const createPictureCoktail = Cocktail.create({strDrinkThumb})
-//     const createCocktail = Cocktail.create({strDrink, strCategory, strAlcoholic, strGlass, strDrinkThumb, strInstructions, strIngredients, strOwner, strTags})
-
-//     Promise.all([ createPicture, createCocktail])
-//     .then(results => res.redirect('/', { picture: results[0], cocktail: results[1]}))
-//     .catch(err => next(new Error(err)))
-
-// })
 
 
 
@@ -63,46 +58,82 @@ router.get('/', (req, res) => {
 })
 
 
+//Para buscar?¿
+router.get('/results', (req, res) => {
+
+    const drinkValue = req.query.strDrink
+
+   res.render('cocktails/search', drinkValue)
+})
+
+
+
 //Busqueda por ID
 router.get('/:id', (req, res) => {
     const id = req.params.id
     
     Cocktail
         .findById(id)
-        .populate('value')
+        .populate('strOwner')
         .then(cocktailDetails => res.render('cocktails/details', { cocktailDetails } ))
         .catch(err => console.log('Error:', err))
 })
 
+// function search_cocktail(){
+// let input= document.getElementById('searchbar').value
+
+
+// }
+
 // Editar cocktail
-router.get('/profile/edit/:cocktail_id', (req, res) => {
+router.get('/profile/edit-cocktail', (req, res, next) => {
+
+    const cocktail_id = req.query.cocktail_id
+
+    Cocktail.findById(cocktail_id)
+    // .populate('strCategory')
+    // .populate('srtAlcoholic')
+    // .populate('strGlass')
+    .then(allCocktailDetails => res.render('cocktails/edit-cocktail', allCocktailDetails))
+    .catch(err => console.log("ERRORR", err))
+
+})
+
+
+
+//     const id = req.params.cocktail_id
+
+//     const cocktailPromise = Cocktail.findById(id)
+//     const valuePromise = Value.find()
+
+//     Promise.all([cocktailPromise, valuePromise])
+//         .then(results => res.render('cocktails/edit-cocktail', {cocktail: results[0], value: results[1]}))
+//         .catch(err => next(new Error(err)))
+    
+// })
+
+router.post('/profile/edit-cocktail/:cocktail_id', (req, res) => {
+
+    const cocktail_id = req.params.cocktail_id
+   
+    const {strDrink, strCategory, strAlcoholic, strGlass, strDrinkThumb, strInstructions, strIngredients, strOwner, strTags} = req.body
+
+    Cocktail.findByIdAndUpdate(cocktail_id, {strDrink, strCategory, strAlcoholic, strGlass, strDrinkThumb, strInstructions, strIngredients, strOwner, strTags})
+        .then(() => res.redirect('/cocktails/profile'))
+        .catch(err => console.log('ERROR:', err))
+
+})
+
+
+// Eliminar cocktail
+router.post('/profile/:cocktail_id/delete', (req, res) => {
+
     const id = req.params.cocktail_id
 
-    Cocktail.findById(id)
-        .then(editCocktail => res.render('cocktails/edit-cocktail', editCocktail))
+    Cocktail.findByIdAndRemove(id)
+        .then(() => res.redirect('/cocktails'))
         .catch(err => console.log('ERROR', err))
-    
 })
-// router.get('/list', (req, res) => {
-    
-//     Cocktail.find()
-//    // .populate('StrOwner')
-//     .then(allCocktails => res.render('cocktails/list', allCocktails ))
-//     .catch(er => ('Error:', err))
-
-// })
-//Listar cocktails por usuario
-
-router.get('/profile/:id', (req, res) => {
-
-    const id= req.params.id
-
-    Cocktail.find({strOwner : id})
-    .populate('user')
-    .then(allDrinks => res.render('cocktails/user-profile', { allDrinks }))
-    .catch(err => console.log('ERROR', err))
-})
-
 
 module.exports = router
 

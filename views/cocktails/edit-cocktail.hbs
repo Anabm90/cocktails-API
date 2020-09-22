@@ -1,61 +1,66 @@
 <h1>Editar un cocktail</h1>
 
-<form action="/cocktails/profile/new-cocktail" method="post" enctype="multipart/form-data">
+<form action="/cocktails/profile/edit-cocktail/{{id}}" method="post" enctype="multipart/form-data">
     <label for="strDrink">Name</label>
-    <input name="strDrink" type="text" class="form-control" id="name-input">
+    <input name="strDrink" type="text" class="form-control" id="name-input" value="{{strDrink}}">
 
 
     <label for="strCategorry">Category</label>
      <select name="strCategory" class="form-control">
-        <option>Seleccionar</option>
+            <option>Seleccionar</option>      
+              
+        <!-- <option>Seleccionar</option>
                 {{#each values}}
                     {{#each category}}
                         <option value="{{[]}}">{{[]}}</option>
                     {{/each}}    
-                {{/each}}      
+                {{/each}}       -->
     </select>
    
-      
+    
     <label for="strAlcoholic">Alcohol</label>
      <select name="strAlcoholic" class="form-control">
-            <option>Seleccionar</option>
+
+     <option>Seleccionar</option>
+            {{!-- <option>Seleccionar</option>
               {{#each values}}
                 {{#each alcohol}}
                     <option value="{{[]}}">{{[]}}</option>
                 {{/each}}
-            {{/each}}
+            {{/each}} --}}
             
         </select>
 
 
     <label for="strGlass">Glass</label>
      <select name="strGlass" class="form-control">
-            <option>Seleccionar</option>
+       <option>Seleccionar</option>
+            {{!-- <option>Seleccionar</option>
               {{#each values}}
                 {{#each glass}}
                     <option value="{{[]}}">{{[]}}</option>
                 {{/each}}
-            {{/each}}
+            {{/each}} --}}
             
         </select>
 
     
-    <input type="text" name="imageName" placeholder="nombre de la imagen"><br><br>
-    <input type="file" name="imageInput"><br><br>
+    <input type="text" name="imageName" placeholder="nombre de la imagen" value="{{imageName}}"><br><br>
+    <input type="file" name="imageInput" value="{{strDrinkThumb}}"><br><br>
     
 
     <label for="strInstructions">Instructions</label>
-      <input name="strInstructions" type="text" class="form-control" id="name-input">
+      <input name="strInstructions" type="text" class="form-control" id="name-input" value="{{strInstructions}}">
 
     <label for="strIngredients">Ingredients</label>
-      <input name="strIngredients" type="text" class="form-control"  id="name-input">
+      <input name="strIngredients" type="text" class="form-control"  id="name-input" value="{{strIngredients}}">
         <p>Ingredient´s structure example: 1 piece , orange juice </p>
 
 
     <label for="strTags">Tags</label>
-      <input name="strTags" type="text" class="form-control" id="name-input">
+      <input name="strTags" type="text" class="form-control" id="name-input" value="{{strTags}}">
 
-     <button type="submit" class="btn btn-dark">Crear cocktail</button>
+     <button type="submit" class="btn btn-dark">Actualizar cocktail</button>
 </form>
 
 

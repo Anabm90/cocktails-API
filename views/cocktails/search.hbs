@@ -1,45 +1,59 @@
 
-
-
-
-
-
-
-
-
 <div class="container">
   <h1 class="text-center">COCKTAILS</h1>
   <hr> 
 
         <div class="cocktail-list-container">
-             
-            <!-- <div class="cocktail-info"> </div> -->
+
+          <input id="searchbar" onkeyup="search_cocktail()" type="text"
+                name="strDrink" placeholder="Search cocktails.."> 
+          
+          <!-- <form action="/cocktails" method="GET"> 
+            <label for="strDrink"></label>
+            <input type="text" name="strDrink" class="search" placeholder="Search coktails here!"> -->
+            <br><br>
+            <!-- <label for="strCategorry">Category</label>
+            <select name="strCategory" class="form-control">
+            <option>Seleccionar</option>
+                {{#each values}}
+                    {{#each category}}
+                        <option value="{{[]}}">{{[]}}</option>
+                    {{/each}}    
+                {{/each}}      
+           </select> -->
+
+            
+            <input type="submit" name="submit" class="submit" value="Search">
+          </form>
+          <br><br>
 
             <div class="cocktail-db">
+
+
               <div class="row">
-               {{#each allcocktails}}
-                  <div class="col-sm-6 col-md-4 col-lg-4">
-                        {{#each results}}
-                        <img class="image-search" src="{{picture.path}}" alt="{{picture.name}}"></div>
-                          {{/each}}
-                        <div class="name-recipes">
-                          <h3 class="text-center">{{strDrink}}</h3></div>
-                        <div class="category">
-                          <p class="text-center">{{strCategory}}</p></div>
-                        <a class="d-flex justify-content-center btn btn-light"href="/cocktails/{{id}}">see more...</a>
+                   {{#each allcocktails}}
+                        <div class="col-sm-6 col-md-4 col-lg-4">
+                        
+                          <img class="image-search mx-auto d-block" src="{{strDrinkThumb}}" alt="{{strDrink}}">
+                          <h3 class="text-center">{{strDrink}}</h3>
+                          <p class="text-center">{{strCategory}}</p>
+                          <a class="d-flex justify-content-center btn btn-light"href="/cocktails/{{id}}">see more...</a>
+                        </div>
+                    {{/each}}
 
-                   </div>
-                {{/each}}
               </div>
+              <div class="row">
+                   {{#each filterCocktails}}
+                        <div class="col-sm-6 col-md-4 col-lg-4">
+                        
+                          <h3 class="text-center">{{strDrink}}</h3>
+                          <p class="text-center">{{strCategory}}</p>
+                          <a class="d-flex justify-content-center btn btn-light"href="/cocktails/{{id}}">see more...</a>
+                        </div>
+                    {{/each}}
             </div>
+
+        </div>
        
-    </div>
+  
 </div>    
-<!-- 
-              <div class="image"><img src="" alt="imagen"></div>
-               <div class="name">Name</div>
-               <div class="category">Category</div>
-
-
-
--->
