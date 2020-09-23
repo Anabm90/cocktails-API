@@ -1,0 +1,46 @@
+ <div class="container">
+        <h1 class="text-center">Welcome {{username}}!</h1>
+        <p>Your Id is: {{id}} </p>
+        <p> Your role is {{role}}</p>
+
+
+        <h2 class="text-center">Your cocktails:</h2>
+        <br>
+            <div class="row">
+
+                {{#each cocktails}}
+
+                    <div class="col-sm-6 col-md-4 col-lg-4">
+                    <img class="image-search mx-auto d-block" src="{{strDrinkThumb}}" alt="{{strDrink}}">
+                    <h3 class="text-center">{{strDrink}}</h3>
+                    
+
+                    <a class="d-flex justify-content-center btn btn-dark"href="/cocktails/{{id}}">Ver detalles</a><br>
+                    <a class="d-flex justify-content-center btn btn-dark"href="/cocktails/profile/edit-cocktail/{{id}}">Editar cocktail</a><br> <!-- ?cocktail_id= -->
+                    <form class="d-flex justify-content-center" action="/cocktails/profile/{{_id}}/delete" method="post">
+                                <button class="btn btn-dark" type="submit">Eliminar</button>
+                                </form>
+                    <br>
+                    </div>
+                
+                {{/each}}
+         
+            </div>
+            <br><br><hr>
+            <div class="row">
+                <div class="col-3"></div>
+                        
+                 <div class="col-6">
+
+                 <a class="d-flex justify-content-center btn btn-dark"href="/cocktails/profile/new-cocktail">Crear nuevo cocktail</a>
+                </div>
+
+                <div class="col-3"></div>
+
+            </div>
+
+
+
+
+ </div>
+ 

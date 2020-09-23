@@ -1,0 +1,148 @@
+ <section class="search-banner text-black py-3" id="search-banner">
+    <div class="container py-5 my-5">
+        <div class="row text-center pb-4">
+            <div class="col-md-12">
+                <h2 class="text-black">ADVANCED SEARCH</h2>
+            </div>
+        </div>
+        <form action="/cocktails/list" method="get">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card acik-renk-form">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="form-group ">
+
+
+                                        <select name="strCategory" class="form-control">
+                                            <option>{{cocktails.strCategory}}</option>      
+                                    
+                                                {{#each value}}
+                                                    {{#each category}}
+                                                        <option value="{{[]}}">{{[]}}</option>
+                                                    {{/each}}    
+                                                {{/each}}  
+                                        </select>
+                                     
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group ">
+                                    <select class="form-control" >
+                                        <option selected>Alcohol</option>
+                                        <option></option>
+                                        
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group ">
+                                    <select class="form-control" >
+                                        <option selected>Glass</option>
+                                        <option></option>
+                                        
+
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group ">
+                                
+                                    <input name="strDrink" type="text" class="form-control" id="name-input"placeholder="cocktail's name">
+                                </div>
+                            </div>
+                            
+
+                            <div class="col-md-12">
+                          
+                                <div class="form-group">
+                                   <input name="strTags" type="text" class="form-control" id="name-input" placeholder="tags">
+                                </div>
+                            <div class="col-md-3">
+                                <button type="submit" class="btn btn-dark">Search</button>
+                            </div>
+                         </div>
+                         
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </form>
+        </div>
+    </div>
+</section> 
+
+
+
+
+
+ <!-- <h1>ADVANCED SEARCH</h1>
+
+<hr>
+
+
+<form action="/cocktails/list" method="get">
+    <label>Name</label>
+    <input name="strDrink" type="text" class="form-control" id="name-input">
+
+
+<<<<<<< HEAD
+     <label for="strCategorry">Category</label>
+     <select name="strCategory" class="form-control">
+        <option>Seleccionar</option>
+                {{#each value}}
+=======
+    <!-- <label for="strCategorry">Category</label>
+     <select name="strCategory" class="form-control">
+        <option>Seleccionar</option>
+                {{#each values}}
+>>>>>>> 6b1c8ea98183a2511d54c46c85cc0769b35df65b
+                    {{#each category}}
+                        <option value="{{[]}}">{{[]}}</option>
+                    {{/each}}    
+                {{/each}}      
+    </select>
+   
+      
+    <label for="strAlcoholic">Alcohol</label>
+     <select name="strAlcoholic" class="form-control">
+            <option>Seleccionar</option>
+              {{#each values}}
+                {{#each alcohol}}
+                    <option value="{{[]}}">{{[]}}</option>
+                {{/each}}
+            {{/each}}
+            
+        </select>
+
+
+    <label for="strGlass">Glass</label>
+     <select name="strGlass" class="form-control">
+            <option>Seleccionar</option>
+              {{#each values}}
+                {{#each glass}}
+                    <option value="{{[]}}">{{[]}}</option>
+                {{/each}}
+            {{/each}}
+            
+        </select>
+
+
+<<<<<<< HEAD
+    <label>Tags</label>
+      <input name="strTags" type="text" class="form-control" id="name-input"> 
+
+     <button type="submit" class="btn btn-dark">Search</button>
+</form> -->
+=======
+    <label for="strTags">Tags</label>
+      <input name="strTags" type="text" class="form-control" id="name-input"> -->
+
+     <button type="submit" class="btn btn-dark">Search</button>
+</form>
+>>>>>>> 6b1c8ea98183a2511d54c46c85cc0769b35df65b

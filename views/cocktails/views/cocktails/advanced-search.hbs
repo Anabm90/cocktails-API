@@ -1,11 +1,14 @@
-<h1>crear un nuevo cocktail</h1>
+<h1>ADVANCED SEARCH</h1>
 
-<form action="/cocktails/profile/new-cocktail" method="post" enctype="multipart/form-data">
-    <label for="strDrink">Name</label>
+<hr>
+
+
+<form action="/cocktails/list" method="get">
+    <label>Name</label>
     <input name="strDrink" type="text" class="form-control" id="name-input">
 
 
-    <label for="strCategory">Category</label>
+    <!-- <label for="strCategorry">Category</label>
      <select name="strCategory" class="form-control">
         <option>Seleccionar</option>
                 {{#each values}}
@@ -39,27 +42,9 @@
             
         </select>
 
-    
-    <input type="text" name="imageName" placeholder="nombre de la imagen"><br><br>
-    <input type="file" name="imageInput"><br><br>
-    
-
-    <label for="strInstructions">Instructions</label>
-      <input name="strInstructions" type="text" class="form-control" id="name-input">
-
-    <label for="strIngredients">Ingredients</label>
-      <input name="strIngredients" type="text" class="form-control"  id="name-input">
-        <p>Ingredient´s structure example: 1 piece , orange juice </p>
-
 
     <label for="strTags">Tags</label>
-      <input name="strTags" type="text" class="form-control" id="name-input">
+      <input name="strTags" type="text" class="form-control" id="name-input"> -->
 
-     <button type="submit" class="btn btn-dark">Crear cocktail</button>
+     <button type="submit" class="btn btn-dark">Search</button>
 </form>
-
-
-
-
-
-

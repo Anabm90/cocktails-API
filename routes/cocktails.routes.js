@@ -50,26 +50,44 @@ router.post('/profile/new-cocktail', cdnUploader.single('imageInput'), (req, res
 
 
 
+//Para buscar
+router.get('/advanced-search', (req, res) => res.render('cocktails/advanced-search'))
 
-//Para buscar?¿
-router.get('/results', (req, res) => {
+router.get('/list', (req, res) => {
+    
+    //const valueDrink = req.query.strDrink
+   
+    Cocktail.find({$or: [{strDrink: req.query.strDrink},{strTags: req.query.strTags}]},
+        
+        (err, myCocktails) => {
 
-    const drinkValue = req.query.strDrink
+        if(err){
 
-   res.render('cocktails/search', drinkValue)
+             return next(err) }
+
+               
+             {cocktails: myCocktails}
+    })
+    .populate('value')
+    .then(myCocktails => res.render('cocktails/list-search', {cocktails: myCocktails }))
+    
 })
 
 
+//     Cocktail.find({strDrink: valueDrink})
+//     .then(cocktailsFind => res.render('cocktails/list-search', {cocktails: cocktailsFind }))
+//     .catch(err => console.log('ERROR', err))
+// })
 
 //Busqueda por ID
 router.get('/:id', (req, res) => {
     const id = req.params.id
     
     Cocktail
-        .findById(id)
-        .populate('strOwner')
-        .then(cocktailDetails => res.render('cocktails/details', { cocktailDetails } ))
-        .catch(err => console.log('Error:', err))
+    .findById(id)
+    .populate('strOwner')
+    .then(cocktailDetails => res.render('cocktails/details', { cocktailDetails } ))
+    .catch(err => console.log('Error:', err))
 })
 
 // function search_cocktail(){
@@ -125,7 +143,6 @@ router.post('/profile/edit-cocktail',cdnUploader.single('imageInput'), (req, res
         .then(() => res.redirect('/cocktails/profile'))
         .catch(err => console.log('ERROR', err))
 
-})
 
 /*
 router.post('/profile/edit-cocktail/:id', cdnUploader.single('imageInput'), (req, res, next) => {
@@ -175,6 +192,24 @@ router.post('/profile/:cocktail_id/delete', (req, res) => {
         .catch(err => console.log('ERROR', err))
 })
 
+
+// Eliminar cocktail
+router.post('/profile/:cocktail_id/delete', (req, res) => {
+    
+    const id = req.params.cocktail_id
+    
+    Cocktail.findByIdAndRemove(id)
+    .then(() => res.redirect('/cocktails'))
+    .catch(err => console.log('ERROR', err))
+})
+
+//Listar todos los cocktails
+router.get('/', (req, res) => {
+    
+    Cocktail.find()
+    .then(allcocktails => res.render('cocktails/search', { allcocktails }))
+    .catch(err => console.log('ERROR', err))
+})
 module.exports = router
 
 
