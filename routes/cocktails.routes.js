@@ -16,7 +16,7 @@ router.get('/ingredients', (req, res) => {
     Bottle.find()
     .then(allBottles => res.render('ingredients', {allBottles}))
     .catch(err => console.log('Error', err))
-  
+
 })
 
 
@@ -37,7 +37,7 @@ router.post('/profile/new-cocktail', cdnUploader.single('imageInput'), (req, res
                 name: nameInput,
                 path: req.file.path,                    
                 originalName: req.file.originalname
-             }) 
+            }) 
 
     const {strDrink, strCategory, strAlcoholic, strGlass, strDrinkThumb, strInstructions, strIngredients, strOwner, strTags} = req.body
     
@@ -49,13 +49,6 @@ router.post('/profile/new-cocktail', cdnUploader.single('imageInput'), (req, res
 
 
 
-//Listar todos los cocktails
-router.get('/', (req, res) => {
-    
-    Cocktail.find()
-    .then(allcocktails => res.render('cocktails/search', { allcocktails }))
-    .catch(err => console.log('ERROR', err))
-})
 
 
 //Para buscar?¿
@@ -83,46 +76,93 @@ router.get('/:id', (req, res) => {
 // let input= document.getElementById('searchbar').value
 
 
-// }
+
 
 // Editar cocktail
-router.get('/profile/edit-cocktail', (req, res, next) => {
+router.get('/profile/edit-cocktail/:id', (req, res, next) => {
 
-    const cocktail_id = req.query.cocktail_id
+    //const cocktail_id = req.query.cocktail_id
 
-    Cocktail.findById(cocktail_id)
-    // .populate('strCategory')
-    // .populate('srtAlcoholic')
-    // .populate('strGlass')
-    .then(allCocktailDetails => res.render('cocktails/edit-cocktail', allCocktailDetails))
-    .catch(err => console.log("ERRORR", err))
+    //Cocktail.findById(cocktail_id)
+    //.populate('value')
+
+    //.then(allCocktailDetails => res.render('cocktails/edit-cocktail', allCocktailDetails))
+    //.catch(err => console.log("ERRORR", err))
+
+     const id = req.params.id
+
+     const { nameInput } = req.body
+   
+     const cocktailPromise = Cocktail.findById(id)
+     const valuePromise = Value.find()
+
+     Promise.all([cocktailPromise, valuePromise])
+    .then(results => res.render('cocktails/edit-cocktail', {cocktail: results[0], value: results[1]}))
+    .catch(err => next(new Error(err)))
+    
+ })
+
+ //ESTE COMENTADO ES EL QUE FALTABA...
+
+router.post('/profile/edit-cocktail',cdnUploader.single('imageInput'), (req, res) => {
+    const cocktail_id = req.query.id
+    const theOwner = req.user.id
+    const thePicture = req.file.path
+    const { nameInput } = req.query.id
+    const filter = {path: req.file.path}
+    const update = 
+
+    Picture
+    .findByIdAndUpdate({
+        name: nameInput,
+        path: req.file.path,                    
+        originalName: req.file.originalname
+    }) 
+
+    const {strDrink, strCategory, strAlcoholic, strGlass, strDrinkThumb, strInstructions, strIngredients, strTags} = req.body
+
+    Cocktail.findByIdAndUpdate(cocktail_id, {strDrink, strCategory, strAlcoholic, strGlass, strDrinkThumb:thePicture, strInstructions, strIngredients, strOwner:theOwner, strTags}) 
+        .then(() => res.redirect('/cocktails/profile'))
+        .catch(err => console.log('ERROR', err))
 
 })
 
-
-
-//     const id = req.params.cocktail_id
-
-//     const cocktailPromise = Cocktail.findById(id)
-//     const valuePromise = Value.find()
-
-//     Promise.all([cocktailPromise, valuePromise])
-//         .then(results => res.render('cocktails/edit-cocktail', {cocktail: results[0], value: results[1]}))
-//         .catch(err => next(new Error(err)))
-    
-// })
-
-router.post('/profile/edit-cocktail/:cocktail_id', (req, res) => {
+/*
+router.post('/profile/edit-cocktail/:id', cdnUploader.single('imageInput'), (req, res, next) => {
 
     const cocktail_id = req.params.cocktail_id
-   
+    const { nameInput } = req.body
+        Picture
+            .create({
+                name: nameInput,
+                path: req.file.path,                    
+                originalName: req.file.originalname
+             }) 
+
     const {strDrink, strCategory, strAlcoholic, strGlass, strDrinkThumb, strInstructions, strIngredients, strOwner, strTags} = req.body
-
-    Cocktail.findByIdAndUpdate(cocktail_id, {strDrink, strCategory, strAlcoholic, strGlass, strDrinkThumb, strInstructions, strIngredients, strOwner, strTags})
-        .then(() => res.redirect('/cocktails/profile'))
-        .catch(err => console.log('ERROR:', err))
-
+    
+    Cocktail
+    .findByIdAndUpdate({strDrink, strCategory, strAlcoholic, strGlass, strDrinkThumb: req.file.path, strInstructions, strIngredients, strOwner: req.user._id, strTags})
+    .then(()=> res.redirect('/cocktails/profile'))
+    .catch(err =>next(err))   
 })
+*/
+
+
+
+/*
+    $lookup:
+      {
+        from: cocktails,
+        localField: strAlcoholic,
+        foreignField: <field from the documents of the "from" collection>,
+        as: <output array field>
+      } 
+ }
+*/
+
+//ADMIN VIEW
+
 
 
 // Eliminar cocktail
@@ -136,4 +176,15 @@ router.post('/profile/:cocktail_id/delete', (req, res) => {
 })
 
 module.exports = router
+
+
+
+//Listar todos los cocktails
+router.get('/', (req, res) => {
+
+    
+    Cocktail.find()
+    .then(allcocktails => res.render('cocktails/search', { allcocktails }))
+    .catch(err => console.log('ERROR', err))
+})
 
