@@ -1,0 +1,24 @@
+<div class="container">
+
+  <h1>RESULTS</h1>
+  <div class="row">
+
+        {{#each cocktails}}
+            
+                 <div class="col-sm-6 col-md-4 col-lg-4">
+                    <img class="image-search mx-auto d-block" src="{{strDrinkThumb}}" alt="{{strDrink}}">
+                    <h3 class="text-center">{{strDrink}}</h3>
+                    
+
+                    <a class="d-flex justify-content-center btn btn-dark"href="/cocktails/{{id}}">Ver detalles</a><br>
+                    <a class="d-flex justify-content-center btn btn-dark"href="/cocktails/profile/edit-cocktail?cocktail_id={{id}}">Editar cocktail</a><br>
+                    <form class="d-flex justify-content-center" action="/cocktails/profile/{{_id}}/delete" method="post">
+                                <button class="btn btn-dark" type="submit">Eliminar</button>
+                                </form>
+                    <br>
+                    </div>
+            
+       {{/each}}
+  </div>
+    
+</div>
