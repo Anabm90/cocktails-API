@@ -1,6 +1,6 @@
 const mongoose = require('mongoose')
 const dbname = "cocktails-proyect-DB"
-mongoose.connect(`mongodb://localhost/${dbname}`)
+mongoose.connect('mongodb+srv://cocktailDB:sehdus-9sumki-toWzoq@cluster0.d8m9h.mongodb.net/cocktail-app-db')
 
 const Value = require('../models/value.model')
 
@@ -12,7 +12,7 @@ const values = [
     }
 ]
 
-    mongoose.connection.collections['values'].drop()
+   // mongoose.connection.collections['values'].drop()
 
     Value.create(values)
     .then(allValuesCreated => console.log('Se han creado', allValuesCreated.length, 'values en la BBDD'))

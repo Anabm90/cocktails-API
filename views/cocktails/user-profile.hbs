@@ -1,6 +1,6 @@
  <div class="container">
         <h1 class="text-center">Welcome {{username}}!</h1>
-        <p>Your Id is {{_id}}</p>
+        <p>Your Id is: {{id}} </p>
         <p> Your role is {{role}}</p>
 
 
@@ -16,7 +16,7 @@
                     
 
                     <a class="d-flex justify-content-center btn btn-dark"href="/cocktails/{{id}}">Ver detalles</a><br>
-                    <a class="d-flex justify-content-center btn btn-dark"href="/cocktails/profile/edit-cocktail?cocktail_id={{id}}">Editar cocktail</a><br>
+                    <a class="d-flex justify-content-center btn btn-dark"href="/cocktails/profile/edit-cocktail/{{id}}">Editar cocktail</a><br> <!-- ?cocktail_id= -->
                     <form class="d-flex justify-content-center" action="/cocktails/profile/{{_id}}/delete" method="post">
                                 <button class="btn btn-dark" type="submit">Eliminar</button>
                                 </form>

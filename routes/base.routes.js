@@ -32,22 +32,7 @@ router.get('/cocktails/profile', checkLoggedIn, (req, res, next) => {
            res.render('cocktails/user-profile', { cocktails: myCocktails }) 
             })
        
-})
-
-
-//     Cocktail
-//         .find({strOwner: req.user._id}, (err, myCocktails))
-//         .populate('strOwner')
-//         .then(cocktails => {
-//             if (err) { 
-//                 return next(err)}
-//             res.render('cocktails/user-profile', { cocktails: myCocktails })
-           
-//         })
-        
-// })
-                
-  
+}) 
 
 //router.get('/profile/new-cocktail', checkLoggedIn, (req, res) => res.render('cocktails/new-cocktail'))
 

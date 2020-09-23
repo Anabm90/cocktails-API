@@ -10,6 +10,6 @@ const glassesSchema = new Schema ({
     {timestamp: true}
 )
 
-const Glass = mongoose.model('Bottle', glassesSchema)
+const Glass = mongoose.model('Glass', glassesSchema)
 
 module.exports = Glass
