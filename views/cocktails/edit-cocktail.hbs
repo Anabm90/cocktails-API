@@ -1,67 +1,64 @@
-<h1>Editar un cocktail</h1>
+<h1>Editing a cocktail</h1>
 
-<form action="/cocktails/profile/edit-cocktail?id={{cocktail.id}}" method="post"> <!--enctype="multipart/form-data" --> 
+<form action="/cocktails/profile/edit-cocktail?id={{cocktail.id}}" enctype="multipart/form-data" method="post">
+    <!--enctype="multipart/form-data" -->
     <label for="strDrink">Name</label>
-    <input name="strDrink" type="text" class="form-control"  value="{{cocktail.strDrink}}">
+    <input name="strDrink" type="text" class="form-control" value="{{cocktail.strDrink}}" required>
 
 
     <label for="strCategorry">Category </label>
-        <select name="strCategory" class="form-control">
-            <option>{{cocktail.strCategory}}</option>      
-    
-                {{#each value}}
-                    {{#each category}}
-                        <option value="{{[]}}">{{[]}}</option>
-                    {{/each}}    
-                {{/each}}       
+    <select name="strCategory" class="form-control">
+        <option>{{cocktail.strCategory}}</option>
+
+        {{#each value}}
+        {{#each category}}
+        <option value="{{[]}}">{{[]}}</option>
+        {{/each}}
+        {{/each}}
     </select>
 
     <label for="strAlcoholic">Alcohol </label>
     <select name="strAlcoholic" class="form-control">
 
-            <option>{{cocktail.strAlcoholic}}</option>
-            {{#each value}}
-                {{#each alcohol}}
-                    <option value="{{[]}}">{{[]}}</option>
-                {{/each}}
-            {{/each}} 
-            
+        <option>{{cocktail.strAlcoholic}}</option>
+        {{#each value}}
+        {{#each alcohol}}
+        <option value="{{[]}}">{{[]}}</option>
+        {{/each}}
+        {{/each}}
+
     </select>
 
 
     <label for="strGlass">Glass </label>
-        <select name="strGlass" class="form-control">
-            <option>{{cocktail.strGlass}}</option>
-                {{#each value}}
-                    {{#each glass}}
-                    <option value="{{[]}}">{{[]}}</option>
-                    {{/each}}
-                {{/each}}  
-        </select>
+    <select name="strGlass" class="form-control">
+        <option>{{cocktail.strGlass}}</option>
+        {{#each value}}
+        {{#each glass}}
+        <option value="{{[]}}">{{[]}}</option>
+        {{/each}}
+        {{/each}}
+    </select>
 
-    <p>Actual Image:</p> 
+    <p>Actual Image:</p>
     <p><img src="{{cocktail.strDrinkThumb}}" height="80px"></p>
+    <p>New Image</p>
+    <p>{{cocktail.strDrinkThumb}}</p>
     <input type="text" name="imageName" placeholder="nombre de la imagen" value="{{imageName}}"><br><br>
     <input type="file" name="imageInput" value="{{cocktail.strDrinkThumb}}"><br><br>
 
-    
+
 
     <label for="strInstructions">Instructions</label>
-      <input name="strInstructions" type="text" class="form-control"  value="{{cocktail.strInstructions}}">
+    <input name="strInstructions" type="text" class="form-control" value="{{cocktail.strInstructions}}" required>
 
     <label for="strIngredients">Ingredients</label>
-      <input name="strIngredients" type="text" class="form-control"   value="{{cocktail.strIngredients}}">
-        <p>Ingredient´s structure example: 1 piece , orange juice </p>
+    <input name="strIngredients" type="text" class="form-control" value="{{cocktail.strIngredients}}" required>
+    <p>Ingredient´s structure example: 1 piece , orange juice </p>
 
 
     <label for="strTags">Tags</label>
-      <input name="strTags" type="text" class="form-control"  value="{{cocktail.strTags}}">
+    <input name="strTags" type="text" class="form-control" value="{{cocktail.strTags}}" required>
 
-     <button type="submit" class="btn btn-dark">Actualizar cocktail</button>
+    <button type="submit" class="btn btn-dark">Actualizar cocktail</button>
 </form>
-
-
-
-
-
-
