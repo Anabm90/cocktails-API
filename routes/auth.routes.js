@@ -35,7 +35,6 @@ router.post('/signup', (req, res, next) => {
         .catch(error => next(error))
 })
 
-
 // User login
 router.get('/login', (req, res) => res.render('auth/login', { "errorMsg": req.flash("error") }))
 router.post('/login', passport.authenticate("local", {
@@ -45,7 +44,6 @@ router.post('/login', passport.authenticate("local", {
     passReqToCallback: true,
     badRequestMessage: 'Rellena todos los campos'
 }))
-
 
 // User logout
 router.get("/logout", (req, res) => {
