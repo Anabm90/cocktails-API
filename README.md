@@ -82,3 +82,4 @@ the-cocktail-app/
         
      
 ```
+Authors: Cynthia Gorosito && Ana Bermúdez
