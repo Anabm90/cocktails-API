@@ -70,7 +70,7 @@ the-cocktail-app/
     ├── layout.hbs
     ├── signLayout.hbs
     │
-    ├── cocktails
+    └── cocktails
         ├── admin.hbs
         ├── advanced-search.hbs
         ├── details.hbs
