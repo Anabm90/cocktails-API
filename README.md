@@ -71,14 +71,14 @@ the-cocktail-app/
     ├── signLayout.hbs
     │
     ├── cocktails
-    │   ├── admin.hbs
-    │   ├── advanced-search.hbs
-    │   ├── details.hbs
-    │   ├── edit-cocktail.hbs
-    │   ├── list-search.hbs
-    │   ├── new-cocktail.hbs
-    │   ├── search.hbs
-    │   └── user-profile.hbs
-    │    
-    └── 
+        ├── admin.hbs
+        ├── advanced-search.hbs
+        ├── details.hbs
+        ├── edit-cocktail.hbs
+        ├── list-search.hbs
+        ├── new-cocktail.hbs
+        ├── search.hbs
+        └── user-profile.hbs
+        
+     
 ```
