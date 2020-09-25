@@ -2,8 +2,8 @@
 
 A Cocktails Web using the CocktailDB API
 
-ENDPOINTS TABLE
 
+# Endpoints table
 
 | Id        | Method        | Path                               | Description                |
 | :---      |     :---      |    :---                            |  :---                      |
@@ -82,4 +82,10 @@ the-cocktail-app/
         
      
 ```
-Authors: Cynthia Gorosito && Ana Bermúdez
+# Built With
+
+HTML5, CSS, JavaScript (ES6), Node.js
+
+# Authors
+
+Cynthia Gorosito && Ana Bermúdez
