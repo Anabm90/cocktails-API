@@ -1,26 +1,47 @@
-<div class="row justify-content-center">
-    <div class="col-md-6">
+<div class="container container-sign sign-font">
+    <div class="logo-sign-content"><img
+            src="https://res.cloudinary.com/cocktailerie/image/upload/v1600652945/cocktails/logo_boceto_btq1gi.png"
+            class="logo-style"></div>
+    <div class="d-flex justify-content-center h-100">
+        <div class="card-sign position-logo">
+            <div class="card-header-sign">
+                <h3>Login</h3>
 
-        <h1>Inicio de sesión</h1>
-
-        <form action="/login" method="POST">
-            <div class="form-group">
-                <label for="field1">Nombre de usuario</label>
-                <input name="username" type="text" class="form-control" id="field1">
             </div>
-            <div class="form-group">
-                <label for="field2">Contraseña</label>
-                <input name="password" type="password" class="form-control" id="field2">
+            <div class="card-body">
+                <form action="/login" method="POST">
+                    <div class="input-group form-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="fas fa-user icon-custom"></i></span>
+                        </div>
+                        <input name="username" type="text" class="form-control" placeholder="username">
+
+                    </div>
+                    <div class="input-group form-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="fas fa-key icon-custom"></i></span>
+                        </div>
+                        <input name="password" type="password" class="form-control" placeholder="password">
+
+                    </div>
+                    <div class="row align-items-center remember">
+                        {{#if errorMsg}}
+                        <div id="errorMsg">{{{errorMsg}}}</div>
+                        {{/if}}
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" value="Login" class="btn float-right login_btn">
+                    </div>
+                </form>
             </div>
+            <div class="card-footer">
+                <div class="d-flex justify-content-center links">
+                    Don´t you have an account?<a href="/signup">Signup</a>
+                </div>
+                <div class="d-flex justify-content-center">
 
-            <button type="submit" class="btn btn-dark btn-block btn-lg">Iniciar sesión</button>
-
-            {{#if errorMsg}}
-            <div id="errorMsg">{{{errorMsg}}}</div>
-            {{/if}}
-
-        </form>
-
-        <p>¿No tienes cuenta? <a href="/signup">¡Regístrate!</a></p>
+                </div>
+            </div>
+        </div>
     </div>
 </div>

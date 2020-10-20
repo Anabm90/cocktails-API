@@ -1,13 +1,17 @@
 const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 
-const glassesSchema = new Schema ({
-
-    name:String,
-    image: String,
-    
+const glassesSchema = new Schema({
+    name: {
+        type: String
     },
-    {timestamp: true}
+    image: {
+        type: String
+    }
+},
+    {
+        timestamp: true
+    }
 )
 
 const Glass = mongoose.model('Glass', glassesSchema)

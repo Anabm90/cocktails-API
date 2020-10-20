@@ -1,53 +1,28 @@
-<div class="container">
+<div class="card-container container">
+    <div class="card">
+        <div class="row">
 
-    <h1 class="text-center"> {{cocktailDetails.strDrink}}</h1>
-
-    <div class="row">
-
-            <div class="col-sm-12 col-md-5 col-lg-5">
-                <div class="row">
-                        <div class="col-12">
-                            <img class="img-details"src="{{cocktailDetails.strDrinkThumb}}" alt="{{cocktailDetails.strDrink}}" height="80px">
-
-                        </div>
-                        <div class="col-12">
-
-                            {{cocktailDetails.strCategory}} - {{cocktailDetails.strAlcoholic}} <br><br>
-                            {{cocktailDetails.strGlass}}
-                                
-                    <p>Created by:  {{cocktailDetails.strOwner.username}}</p>
-                        </div>
-                            
-                </div>
-                                
-                    
-
-                  
-            </div>
-                    
-            <div class="col-sm-12 col-md-7 col-lg-7">
-
-                <h4>Instructions:</h4>
-                <p>{{cocktailDetails.strInstructions}}</p>
-
+            <div class="col-sm-12 col-md-12 col-lg-8">
+                <span class="card-author subtle">Created by: {{cocktailDetails.strOwner.username}}</span>
+                <h2 class="card-title">{{cocktailDetails.strDrink}}</h2>
+                <span class="card-description subtle" style="margin">{{cocktailDetails.strInstructions}}</span>
+                <div class="card-read"></div>
                 <h4>Ingredients:</h4>
                 {{#each cocktailDetails.strIngredients}}
-                    <ul>
-                        <li>{{[]}}</li>
-                    </ul>
+                <ul>
+                    <li>{{[]}}</li>
+                </ul>
                 {{/each}}
-
             </div>
 
-    
+            <div class="col-sm-12 col-md-12 col-lg-3">
+                <img class="image-details" src="{{cocktailDetails.strDrinkThumb}}" alt="" class="card-media" />
+            </div>
 
+
+
+        </div>
     </div>
-    <hr>
-     
-      <p class= "text-center">Tags: 
-                    {{#each cocktailDetails.strTags}}
-                        <strong "style= background-color:black; color: white; padding: 3px;">{{[]}} </strong> 
-                    {{/each}}
-                    </p>
-
+    <div class="card-shadow"></div>
 </div>
+</section>
