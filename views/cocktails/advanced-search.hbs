@@ -1,8 +1,8 @@
-<section class="search-banner text-black py-3" id="search-banner">
-    <div class="container py-5 my-5">
+<section style="background-color:white; padding-top: 30px; padding-bottom:180px;">
+    <div class="container">
         <div class="row text-center pb-4">
             <div class="col-md-12">
-                <h1 class="text-black">Advanced search</h1>
+                <h1>Advanced search</h1>
             </div>
         </div>
         <form action="/cocktails/list" method="get">
@@ -11,7 +11,6 @@
                     <div class="card acik-renk-form">
                         <div class="card-body">
                             <div class="row">
-
                                 <div class="col-md-4">
                                     <div class="form-group ">
                                         <select name="strAlcoholic" class="form-control">
@@ -21,13 +20,11 @@
                                             <option value="{{[]}}">{{[]}}</option>
                                             {{/each}}
                                             {{/each}}
-
                                         </select>
                                     </div>
                                 </div>
                                 <div class="col-md-4">
                                     <div class="form-group ">
-
                                         <select name="strCategory" class="form-control">
                                             <option>Category</option>
                                             {{#each values}}
@@ -47,7 +44,6 @@
                                             <option value="{{[]}}">{{[]}}</option>
                                             {{/each}}
                                             {{/each}}
-
                                         </select>
                                     </div>
                                 </div>
@@ -56,26 +52,16 @@
                             <div class="row">
                                 <div class="col-md-12">
                                     <div class="form-group ">
-
                                         <select name="strDrink" class="form-control">
                                             <option>Name</option>
                                             {{#each cocktails}}
-
                                             <option>{{strDrink}}</option>
                                             {{/each}}
-
                                         </select>
-
-                                        {{!-- <div class="form-group ">
-
-                                            <input  type="text" class="form-control" id="name-input"
-                                                placeholder="cocktail's name">
-                                        </div> --}}
                                     </div>
 
                                     <div class="col-md-12">
-                                        <div class="form-group ">
-
+                                        <div class="form-group">
                                             <select name="strDrink" class="form-control">
                                                 <option>Tag</option>
                                                 {{#each cocktails}}
@@ -100,7 +86,6 @@
                             </div>
                         </div>
                     </div>
-
                 </div>
         </form>
     </div>

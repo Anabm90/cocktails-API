@@ -34,7 +34,7 @@
         <div class="bg-white py-2 collapse-inner rounded">
           <h6 class="collapse-header">Custom Components:</h6>
           <a class="collapse-item" href="#create-user">Create new user</a>
-          <a class="collapse-item" href="#edit-users">See active users</a>
+          <a class="collapse-item" href="#edit-user">See active users</a>
         </div>
       </div>
     </li>
@@ -48,11 +48,11 @@
       </a>
       <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
         <div class="bg-white py-2 collapse-inner rounded">
-          <h6 class="collapse-header">Custom Utilities:</h6>
-          <a class="collapse-item" href="utilities-color.html">Colors</a>
-          <a class="collapse-item" href="utilities-border.html">Borders</a>
-          <a class="collapse-item" href="utilities-animation.html">Animations</a>
-          <a class="collapse-item" href="utilities-other.html">Other</a>
+          <h6 class="collapse-header">Edition Utilities:</h6>
+          <a class="collapse-item" href="#edit-user">Edit user</a>
+          <a class="collapse-item" href="utilities-border.html">Edit cocktail</a>
+          <a class="collapse-item" href="utilities-animation.html">Edit glasses</a>
+          <a class="collapse-item" href="utilities-other.html">Edit bottles</a>
         </div>
       </div>
     </li>
@@ -62,7 +62,7 @@
 
     <!-- Heading -->
     <div class="sidebar-heading">
-      Addons
+      Login/Logout
     </div>
 
     <!-- Nav Item - Pages Collapse Menu -->
@@ -75,13 +75,10 @@
       <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
         <div class="bg-white py-2 collapse-inner rounded">
           <h6 class="collapse-header">Login Screens:</h6>
-          <a class="collapse-item" href="login.html">Login</a>
-          <a class="collapse-item" href="register.html">Register</a>
-          <a class="collapse-item" href="forgot-password.html">Forgot Password</a>
-          <div class="collapse-divider"></div>
-          <h6 class="collapse-header">Other Pages:</h6>
-          <a class="collapse-item" href="404.html">404 Page</a>
-          <a class="collapse-item" href="blank.html">Blank Page</a>
+          <a class="collapse-item" href="/login">Login</a>
+          <a class="collapse-item" href="/signup">Register</a>
+          <a class="collapse-item" href="/Logout">Logout</a>
+
         </div>
       </div>
     </li>
@@ -355,64 +352,57 @@
               <div class="col-lg-6 mb-4">
                 <div class="card bg-primary text-white shadow">
                   <div class="card-body">
-                    Primary
-                    <div class="text-white-50 small">#4e73df</div>
+
                   </div>
                 </div>
               </div>
               <div class="col-lg-6 mb-4">
                 <div class="card bg-success text-white shadow">
                   <div class="card-body">
-                    Success
-                    <div class="text-white-50 small">#1cc88a</div>
+
                   </div>
                 </div>
               </div>
               <div class="col-lg-6 mb-4">
                 <div class="card bg-info text-white shadow">
                   <div class="card-body">
-                    Info
-                    <div class="text-white-50 small">#36b9cc</div>
+
                   </div>
                 </div>
               </div>
               <div class="col-lg-6 mb-4">
                 <div class="card bg-warning text-white shadow">
                   <div class="card-body">
-                    Warning
-                    <div class="text-white-50 small">#f6c23e</div>
+
                   </div>
                 </div>
               </div>
               <div class="col-lg-6 mb-4">
                 <div class="card bg-danger text-white shadow">
                   <div class="card-body">
-                    Danger
-                    <div class="text-white-50 small">#e74a3b</div>
+
                   </div>
                 </div>
               </div>
               <div class="col-lg-6 mb-4">
                 <div class="card bg-secondary text-white shadow">
                   <div class="card-body">
-                    Secondary
-                    <div class="text-white-50 small">#858796</div>
+
                   </div>
                 </div>
               </div>
               <div class="col-lg-6 mb-4">
                 <div class="card bg-light text-black shadow">
                   <div class="card-body">
-                    Light
-                    <div class="text-black-50 small">#f8f9fc</div>
+
                   </div>
                 </div>
               </div>
               <div class="col-lg-6 mb-4">
                 <div class="card bg-dark text-white shadow">
                   <div class="card-body">
-                    Dark
-                    <div class="text-white-50 small">#5a5c69</div>
+
+
                   </div>
                 </div>
               </div>
@@ -426,46 +416,63 @@
             <div class="card shadow mb-4">
               <div class="card-header py-3">
                 <h6 class="m-0 font-weight-bold text-primary" id="#active-users">
-                  <i class="fas fa-cocktail"></i> Create cocktail</h6>
+                  <i class="fas fa-cocktail" id="#edit-user"></i> Edit user</h6>
               </div>
               <div class="card-body">
-                <div class="text-center">
+                <div>
+                  <form action="/cocktails/admin" method="POST">
+                    <div class="form-group">
+                      <h4 class="small font-weight-bold">Username</h4>
+                      <div>
+                        <input name="username" type="text" class="form-control" id="field1">
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <h4 class="small font-weight-bold">Password</h4>
+                      <input name="password" type="password" class="form-control" id="field2">
+                    </div>
+                    <div class="form-group">
+                      <h4 class="small font-weight-bold">Role</h4>
+                      <h4 class="small font-weight-bold"><input type="radio" name="role" value="Admin"> Admin</h4>
+                      <h4 class="small font-weight-bold"><input type="radio" name="role" value="Suscriptor"> Suscriptor
+                      </h4>
+                    </div>
+                    <button type="submit" class="btn btn-dark btn-block btn-lg">Edit</button>
                 </div>
+                <form>
               </div>
             </div>
+          </div>
 
-            <!-- Approach -->
-            <div class="card shadow mb-4">
-              <div class="card-header py-3">
-                <h6 class="m-0 font-weight-bold text-primary">Development Approach</h6>
-              </div>
-              <div class="card-body">
-                <p>SB Admin 2 makes extensive use of Bootstrap 4 utility classes in order to reduce CSS bloat and poor
-                  page performance. Custom CSS classes are used to create custom components and custom utility classes.
-                </p>
-                <p class="mb-0">Before working with this theme, you should become familiar with the Bootstrap framework,
-                  especially the utility classes.</p>
-              </div>
+          <!-- Approach -->
+          <div class="card shadow mb-4">
+            <div class="card-header py-3">
+              <h6 class="m-0 font-weight-bold text-primary"></h6>
+            </div>
+            <div class="card-body">
+
+              <p class="mb-0"></p>
             </div>
           </div>
         </div>
       </div>
-      <!-- /.container-fluid -->
     </div>
-    <!-- End of Main Content -->
-
-    <!-- Footer -->
-    <footer class="sticky-footer bg-white">
-      <div class="container my-auto">
-        <div class="copyright text-center my-auto">
-          <span>Copyright &copy; Your Website 2020</span>
-        </div>
-      </div>
-    </footer>
-    <!-- End of Footer -->
-
+    <!-- /.container-fluid -->
   </div>
-  <!-- End of Content Wrapper -->
+  <!-- End of Main Content -->
+
+  <!-- Footer -->
+  <footer class="sticky-footer bg-black">
+    <div class="container my-auto">
+      <div class="copyright text-center my-auto">
+        <span>Copyright &copy; Ana y Cynthia para Ironhack 2020</span>
+      </div>
+    </div>
+  </footer>
+  <!-- End of Footer -->
+
+</div>
+<!-- End of Content Wrapper -->
 
 </div>
 <!-- End of Page Wrapper -->
