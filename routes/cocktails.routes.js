@@ -26,7 +26,8 @@ const checkRole = rolesToCheck => {
 //Listar todos los cocktails
 router.get('/', (req, res) => {
 
-    Cocktail.find()
+    Cocktail
+        .find()
         .then(allcocktails => res.render('cocktails/search', { allcocktails }))
         .catch(err => console.log('ERROR', err))
 })
@@ -47,8 +48,7 @@ router.get('/list', (req, res) => {
     console.log(req.query.strAlcoholic, req.query.strCategory)
 
     Cocktail
-
-        .find({ $or: [{ strAlcoholic: req.query.strAlcoholic }, { strCategory: req.query.strCategory }] })
+        .find({ $or: [{ strAlcoholic: req.query.strAlcoholic }, { strCategory: req.query.strCategory }, { strDrink: req.query.strDrink }, { strTags: req.query.strTags }, { strGlass: req.query.strGlass }] })
         .then(myCocktails => res.render('cocktails/list-search', { cocktails: myCocktails }))
         .catch(err => console.log('ERROR', err))
 })
@@ -110,7 +110,8 @@ router.get('/profile/edit-cocktail/:id', checkLoggedIn, (req, res, next) => {
     const cocktailPromise = Cocktail.findById(id)
     const valuePromise = Value.find()
 
-    Promise.all([cocktailPromise, valuePromise])
+    Promise
+        .all([cocktailPromise, valuePromise])
         .then(results => res.render('cocktails/edit-cocktail', { cocktail: results[0], value: results[1] }))
         .catch(err => next(new Error(err)))
 
@@ -138,11 +139,10 @@ router.post('/profile/:cocktail_id/delete', checkLoggedIn, (req, res, next) => {
 
     const id = req.params.cocktail_id
 
-    Cocktail.findByIdAndRemove(id)
-        .then(() => res.redirect('/cocktails'))
+    Cocktail
+        .findByIdAndRemove(id)
+        .then(() => res.redirect('/cocktails/profile'))
         .catch(err => next(err))
 })
-
-
 
 module.exports = router

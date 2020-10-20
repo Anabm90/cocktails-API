@@ -1,7 +1,11 @@
 const express = require('express')
 const router = express.Router()
+const passport = require("passport")
 
 const cdnUploader = require('./../configs/cloudinary.config')
+
+const bcrypt = require("bcrypt")
+const bcryptSalt = 10
 
 const Picture = require('./../models/picture.model')
 const Cocktail = require('../models/cocktail-model')
@@ -27,12 +31,14 @@ const checkRole = rolesToCheck => {
 router.get('/', checkLoggedIn, checkRole(['Admin']), (req, res, next) => {
 
     const userAdmin = req.user
+
     const cocktailPromise = Cocktail.find()
     const valuePromise = Value.find()
     const userPromise = User.find()
     const glassesPromise = Glass.find()
 
-    Promise.all([cocktailPromise, valuePromise, userPromise, glassesPromise])
+    Promise
+        .all([cocktailPromise, valuePromise, userPromise, glassesPromise])
         .then(allData => res.render('cocktails/admin', {
             cocktail: allData[0],
             value: allData[1],
@@ -41,7 +47,6 @@ router.get('/', checkLoggedIn, checkRole(['Admin']), (req, res, next) => {
             userAdmin
         }))
         .catch(err => next(new Error(err)))
-
 })
 
 router.post('/', (req, res, next) => {
@@ -85,14 +90,14 @@ router.post('/', (req, res, next) => {
                 }))
         })
         .catch(error => next(error))
-
 })
 
 router.post('/userdel/:id', (req, res) => {
 
     const id = req.params.id
 
-    User.findByIdAndRemove(id)
+    User
+        .findByIdAndRemove(id)
         .then(() => res.redirect('/cocktails/admin'))
         .catch(err => console.log('ERROR', err))
 })
@@ -101,7 +106,8 @@ router.post('/recipedel/:id_cocktail', (req, res) => {
 
     const id = req.params.id_cocktail
 
-    Cocktail.findByIdAndRemove(id)
+    Cocktail
+        .findByIdAndRemove(id)
         .then(() => res.redirect('/cocktails/admin'))
         .catch(err => console.log('ERROR', err))
 })

@@ -9,7 +9,7 @@ const bcryptSalt = 10
 
 
 // User signup
-router.get('/signup', (req, res) => res.render("auth/signup"))
+router.get('/signup', (req, res) => res.render("auth/signup", { layout: 'signLayout.hbs' }))
 router.post('/signup', (req, res, next) => {
 
     const { username, password } = req.body
@@ -38,7 +38,7 @@ router.post('/signup', (req, res, next) => {
 // User login
 router.get('/login', (req, res) => res.render('auth/login', { "errorMsg": req.flash("error") }))
 router.post('/login', passport.authenticate("local", {
-    successRedirect: "/cocktails",
+    successRedirect: "/cocktails/profile",
     failureRedirect: "/login",
     failureFlash: true,
     passReqToCallback: true,
