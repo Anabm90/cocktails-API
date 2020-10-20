@@ -23,6 +23,7 @@
   margin-top: 250px; }
 
 .index-button {
+  padding: 100px;
   color: white;
   font-weight: 500px;
   font-size: 1.5em;
@@ -387,13 +388,16 @@ a:hover {
 .row {
   justify-content: center; }
 
+.col-sm-12.col-lg-8.col-md-8.button-index {
+  text-align: center; }
+
 /* For mobile devices */
 @media only screen and (max-width: 767px) {
   body {
     background-image: url("https://res.cloudinary.com/cocktailerie/image/upload/v1600978759/cocktails/background_final_x6xfff.jpg");
     background-position: 7%; }
-  .index-button {
-    margin-top: 500px; }
+  .col-sm-12.col-lg-8.col-md-8.button-index {
+    margin-top: 200px; }
   .index-logo {
     max-width: 100%;
     margin-top: 100px; } }
