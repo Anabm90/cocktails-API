@@ -5,10 +5,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Le cocktelerie</title>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Nothing+You+Could+Do&family=Quicksand:wght@300;400;500;700&display=swap"
-    rel="stylesheet">
+  <title>{{title}}</title>
+
   <link rel="stylesheet"
     href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,300;0,500;0,700;1,300&display=swap" />
   <link rel="stylesheet"
@@ -17,55 +15,66 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
   <link rel="stylesheet" href="/stylesheets/style.css" />
-
 </head>
 
-<body>
-  <nav class="navbar fixed-top navbar-expand-lg navbar-dark">
-    <div class="container">
-      <a class="navbar-brand" href="/">Le Cocktelerie</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
-        aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-
-
-      <div class="collapse navbar-collapse" id="navbarNavDropdown">
-        <ul class="navbar-nav mr-auto">
-          <li class="nav-item active">
-            <a class="nav-link" id="cocktail-list" href="/cocktails">Cocktails <span
-                class="sr-only">(current)</span></a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/ingredients">Ingredients</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/cocktails/profile">Profile</a>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="/login" id="navbarDropdown" role="button" data-toggle="dropdown"
-              aria-haspopup="true" aria-expanded="false">
-              Login</a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="/logout">Logout</a>
-              <a class="dropdown-item" href="/signup">Signup</a>
-            </div>
-          </li>
-
-
-          <li class="nav-item">
-            <a class="nav-link" href="/signup">Signup</a>
-          </li>
-
-          <li class="nav-item form-inline my-2 my-lg-0">
-            <a class="nav-link" id="random-cocktail" href="/random">Random Cocktail</a>
-          </li>
-        </ul>
+<body class="background">
+  <!-- NAVBAR -->
+  <header class="menu">
+    <nav class="navbar navbar-expand-lg navbar-dark static-top navbar-custom" style="background-color:black;">
+      <div class="container">
+        <a class="navbar-brand" href="/">
+          <img
+            src="https://res.cloudinary.com/cocktailerie/image/upload/v1600977751/cocktails/logo_boceto_btq1gi_comwnp.png"
+            width="150px" height="42px" alt="" class="align-middle">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+          aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="/cocktails">Cocktails</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/ingredients">Ingredients</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/cocktails/advanced-search">Advanced Search</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/cocktails/profile">Profile</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/random">Surprise me!</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="/login" id="navbarDropdown" role="button" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">
+                Login</a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="/login">Login</a>
+                <a class="dropdown-item" href="/logout">Logout</a>
+                <a class="dropdown-item" href="/signup">Signup</a>
+              </div>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/signup">Signup</a>
+            </li>
+          </ul>
+        </div>
       </div>
-    </div>
-  </nav>
+    </nav>
+  </header>
+  <!-- END OF NAVBAR -->
+
+  <!-- Carousel -->
+
+  <!-- END OF CAROUSEL -->
 
   {{{body}}}
+
+
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
     integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
     crossorigin="anonymous"></script>
@@ -74,53 +83,9 @@
     crossorigin="anonymous"></script>
   <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 
-
-
   <script src="/javascripts/APIHandler.js"></script>
   <script src="/javascripts/index.js"></script>
   <script src="/javascripts/script.js"></script>
-
-  <footer>
-
-    <div class="row">
-
-      <div class="col-md-12 py-0">
-        <div class="flex-center text-center">
-
-
-          <a class="fb-ic">
-            <i class="fab fa-facebook-f fa-lg white-text mr-md-5 mr-3 fa-1x"> </i>
-          </a>
-
-          <a class="tw-ic">
-            <i class="fab fa-twitter fa-lg white-text mr-md-5 mr-3 fa-1x"> </i>
-          </a>
-
-          <a class="gplus-ic">
-            <i class="fab fa-google-plus-g fa-lg black-text mr-md-5 mr-3 fa-1x"> </i>
-          </a>
-
-          <a class="li-ic">
-            <i class="fab fa-linkedin-in fa-lg white-text mr-md-5 mr-3 fa-1x"> </i>
-          </a>
-
-          <a class="ins-ic">
-            <i class="fab fa-instagram fa-lg white-text mr-md-5 mr-3 fa-1x"> </i>
-          </a>
-
-          <a class="pin-ic">
-            <i class="fab fa-pinterest fa-lg white-text fa-1x"> </i>
-          </a>
-        </div>
-      </div>
-
-
-    </div>
-
-
-    <div class="footer-copyright text-center">Created by: Cynthia Gorosito & Ana Bermúdez</div>
-
-  </footer>
 </body>
 
 </html>
