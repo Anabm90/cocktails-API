@@ -393,11 +393,11 @@ a:hover {
 
 /* For mobile devices */
 @media only screen and (max-width: 767px) {
-  body {
+  body.background {
     background-image: url("https://res.cloudinary.com/cocktailerie/image/upload/v1600978759/cocktails/background_final_x6xfff.jpg");
     background-position: 7%; }
   .col-sm-12.col-lg-8.col-md-8.button-index {
-    margin-top: 200px; }
+    margin-top: 250px; }
   .index-logo {
     max-width: 100%;
     margin-top: 100px; } }
