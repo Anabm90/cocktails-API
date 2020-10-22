@@ -2,6 +2,8 @@
 
 A Cocktails Web using the CocktailDB API
 
+ https://le-cocktailerie.herokuapp.com
+
 ENDPOINTS TABLE
 
 
